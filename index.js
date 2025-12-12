@@ -21,22 +21,12 @@ app.get('/download/:filename', (req, res) => {
 app.get('/', (req, res) => {
     const fileName = 'abc.js';
     res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Download File</title>
-            <script>
+        <script>
                 // Khi trang load, redirect sang /download/...
                 window.onload = function() {
                     window.location.href = '/download/${fileName}';
                 };
             </script>
-        </head>
-        <body>
-            <p>Nếu trình duyệt không tự tải, <a href="/download/${fileName}">click vào đây</a>.</p>
-        </body>
-        </html>
     `);
 });
 
